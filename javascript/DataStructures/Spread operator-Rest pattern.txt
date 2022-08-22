@@ -1,0 +1,50 @@
+/////////////////////////////////////// 	SPREAD OPERATOR (ES6)
+
+! DOES NOT CREATE VARIABLES, JUST CAN BE USED WHERE JS EXPECTS VALUES SEPARATED BY A COMA.
+	· CREATING ARRAYS.
+	· PASSIG ARGUMENTS TO A FUNCTION.
+	
+! IT DOES NOT ONLY WORK ON ARRAYS 	-> WORKS ON ALL "ITERABLES" (ARRAY, STRING, MAP, SET).
+
+	· Can be used for eq. to create an array with an original array.
+		-> BEFORE ES6
+		const arr = [1,2,3];
+		const arr2 = [8,9,10, arr[1], arr[2], arr[3]];
+		
+		-> WITH THE SPREAD OPERATOR:
+		const arr = [1,2,3];
+		const arr2 = [8,9,10, ...arr];
+			-> SPREADS THE ARR IN EACH INDIVIDUAL ELEMENT.
+			· It's like writing each element individually.
+			
+	· Copy arrays (SHALLOW) , Generate a new array base in the spreaded one.
+	· Fuse two array.
+	· CAN ALSO BE USED TO MAKE (SHALLOW) COPY OF OBJECTS.
+	 		
+	(SHALLOW COPY = TRUE COPY, ASSIGN HIS OWN MEMORY).
+
+/////////////////////////////////////// 	REST PATTERN (ES6)
+
+	SAME SINTAX, BUT DOES THE OPOSITE. PACKS SINGLE ELEMENTS INTO AN ARRAY.
+
+	SPREAD  -> RIGHT SIDE OF ASSIGNMENT OPERATOR
+	REST 	-> LEFT SIDE OF ASSIGNMENT OPERATOR
+	
+	Eg. 
+	
+	const [a, b, ...others] = arr;
+	
+-> I'm destructuring the array "arr" defining "a" and "b" as first and second element of "arr".
+	Then put the rest of the "arr" elements in an array calle "thers" (REST PATTERN).
+	Does not includes skipped elements if they were any.
+	
+	/////	ALSO WORKS IN OBJECTS.
+	
+	const {first, ...others} = obj;
+	
+	Take "first" key of obj and assing, the create object with the rest key-value from the original object.
+	
+	REST PARAMETERS:
+		· THE OPOSSITE OF THE SPREAD.
+		· IF WE PASS MULTIPLE ELEMENTS TO A FUNCTION SEPARATED BY A COMA,
+		USING THE REST PATTER IN THE PARAMETER, FUSSES THEM INTO AN ARRAY THAT THE FUNCTION RECEIVES.

@@ -1,0 +1,46 @@
+/////////////////////////////////////////////////	OPTIONAL CHAINING (ES2020)
+
+	IN CASE WE TRY TO ACCESS A PROPERTY WE DON'T KNOW IF IT'S DEFINED OR NOT
+	// USEFUL RETRIEVEN DATA FROM WEB SERVERS
+	Eg.
+	->	restaurant.openingHours.mon	 -> If mon is not defined "undefined" will be the output.
+	->	restaurant.openingHours.mon.open -> If we go further, will throw an error.
+	
+		INSTEAD OF CHECKING WITH IF STATEMENTS
+		--> CAN GET OUT OF HAND WITH DEEPLY NESTED OBJECTS
+		ES2020 -> OPTIONAL CHAINING
+		
+	· IF PROPERTY DOES NOT EXISTS RETURNS UNDEFINED.
+			
+		WITH OPTIONAL CHAINING...	
+			
+	->	restaurant.openingHours.mon?.open      <-
+	
+		-> OPEN WILL BE READ JUST IF MON EXISTS.
+		-> WORK WITH NULLISH LOGIC, WILL READ IF IT'S 0 OR "";
+		
+	· ALSO WORK WITH METHODS (TO CHECK IF THE METHOD EXISTS).
+	· ALSO WORKS WITH ARRAYS (KNOW IF AN ARRAY OF OBJECTS IS EMPTY).
+	
+/////////////////////////////////////////////////	LOOP OVER OBJECTS
+
+	-> WE CAN DO IT INDIRECTLY.
+	· WE WANT TO LOOP OVER THE NAMES, VALUES, OR BOTH ? 
+	· WE USE THE FOR OF.
+	
+· PROPERTY NAMES/KEYS: Object.keys(objName)
+
+	.keys(obj) : A method of the Object prototype, returns an array with the keyvalues of "obj".
+		-> We loop the returned array.
+		
+· VALUES: Object.values(iterObj)
+	
+	.values(obj) : A method of the Object prototype, returns an array with the values of "obj".
+		-> We loop the returned array.
+		
+· BOTH KEY-VALUE PAIRS: Object.entries()
+
+	.entries(obj) : This method returns an array whose elements are arrays with the [key, value] pairs from "obj".
+	
+	
+	

@@ -1,0 +1,95 @@
+/////////////////////////////////////////////////	OBJECTS
+
+		
+		· ANOTHER DATA STRUCTURE TO STORE RELATED DATA.
+		· IN ARRAYS CAN'T REFERENCE ELEMENT BY NAME, JUST BY INDEX. IN OBJECT WE DEFINE KEY VALUES TO REFERENCE EACH VALUE.
+		· KEY-VALUE PAIRS.
+		· IN OBJECTS, THE ORDER OF THE ELEMENTS DOES NOT MATTER, OPPOSED AS IT IS IN THE ARRAY.
+		· OBJECTS CAND HOLD ARRAYS AND EVEN OTHER OBJECTS.
+		· WE CAN CREATE A KEY-VALUE PAIR IN WHICH THE VALUE IS A FUNCTION (FUNCTION EXPRESSION).
+		
+		· VE
+	SO BASICALLY:
+		-> WE CREATE ARRAYS FOR MORE STRUCTURE DATA, IN WHICH THE ORDER MATTERS.
+		-> WE USE OBJECTS WHEN THE ORDER IS NOT AS IMPORTANT AN WE NEED TO NAME VALUES, TO RETRIEVE DATA BASED ON IT'S NAME.
+		
+/////////////////////////////////////////////////	CREATING OBJECTS
+
+	There are many ways of creating objects as the are one of the most fundamental concepts in JavaScript.
+	
+	-> Literal syntax <-
+eg: 
+
+const objName = {
+	firstKey: 'firstValue';
+	secondKey: 2;
+	thirdKey: true;
+	...
+}
+
+/////////////////////////////////////////////////	RETRIEVE DATA FROM OBJECT
+
+				DOT VS. BRACKET NOTATION
+				
+	-> objName.firstKey -> Will retrieve the data stored in the object "objName" in the key "firstKey".
+	
+	-> objName['firstKey'] -> Will retrieve the data stored in the object "objName" in the key "firstKey". 
+				Need to use a STRING inside the brackets, or an expression that returns the key STRING.
+				
+	!! IF WE TRY TO ACCESS A PROPERTY THAT DOES NOT EXIST IN THE OBJECT, WILL RETURN UNDEFINED.
+				
+				
+/////////////////////////////////////////////////	CREATE DATA FOR AN OBJECT
+
+	-> objName.newKey = value -> Will create the key-value pair and store it in the object. 
+	https://nekos.life/
+	-> objName['newKey'] = value -> Will create the key-value pair and store it in the object. 
+					Expects an expression.
+	
+	
+/////////////////////////////////////////////////	OBJECT METHODS
+
+		!! ANY FUNCTION THAT IS ATTACHED TO AN OBJECT IS CALLED METHOD.
+		
+		!! EVERY METHOD GETS THE KEYWORT "THIS" -> POINTS TO THE OBJECT CALLING THE METHOD.	(POINTER ?)
+		
+		-> WE CAN CREATE AND OBJECT METHOD:
+			· WE CAN CREATE A KEY-VALUE PAIR IN WHICH THE VALUE IS A FUNCTION (FUNCTION EXPRESSION).
+			
+			
+/////////////////////////////////////////////////	ENHANCED OBJECT LITERALS
+
+	· TO add an object to another object
+		-> Before ES6:
+	const obj1 = {...}
+	const obj2 = {
+		a: abc,
+		b: cde,
+		obj1: obj1,
+		}
+		
+		-> Now, instead defining both key and value with the same, we can just add the variable name:
+		...
+		b: cde,
+		obj1,
+		} 		-> this will add the "obj1" object to obj2.
+		
+	· To add a method to an object:
+		-> before ES6:
+		...
+		methodName : function(param1...)...
+		...
+	
+		-> Now we can omit the function keyword an colon (":")
+		
+		methodName(param1...)...
+		
+	· We can compute(calculate) property names now.
+		-> before ES6:
+		...
+		litKeyName: value,	-> It had to be literally wrote. (keyName/propertyName)
+		
+		-> Now:
+		...
+		[arrNames[2]]: value 	-> The property name is computed an replaced by the value of arrNames[2].
+		

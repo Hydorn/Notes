@@ -1,0 +1,77 @@
+//////////////////////////////////////////////////	VARIOUS
+	-> vsCode -> create breakpoints to see variable states in execution.
+	
+	-> console.table(obj) -> formats object output as table.
+	
+	-> "\n" -> Jump line character.
+	
+	-> 'use strict'; -> At the first line, beggining of the script 			!-> INVESTIGATE + ABOUT STRICT MODE.
+		· Forbids to do certain things
+		· Throw errons in situations that would produce an error without strict.
+		
+	->
+		
+//////////////////////////////////////////////////	JAVASCRIPT DATA TYPES
+
+	-> NUMBER: For int and floating point numbers.
+	
+	-> STRING: Sequence of characters.
+	
+	-> BOOLEAN.
+	
+	-> UNDEFINED: Value taken by a var that is not yet defined.
+	
+	-> NULL: Also means "empty value", used differently.
+	
+	-> SYMBOL(ES2015): Value that is unique and cannot be changed.
+	
+	-> BigInt(ES2020): Larger integers than the NUMBER type can hold.
+	
+	
+		!!JAVASCRIPT HAS DINAMIC TYPING -> We do not define types in our variables.
+		
+//////////////////////////////////////////////////	DECLARING VARIABLES
+
+	-> LET : To declare variables that can change later.
+		Can be declared but not initialized.
+	
+	-> CONST : To declare variables that wont chage. Constant values.
+		Should be declared and initialized at once.
+	
+	-> VAR : Old way of declaring variables. Changes in scope of variable. Just use let.
+	
+//////////////////////////////////////////////////	TYPE CONVERSION AND COERCION (CASTING)
+
+	-> CONVERSION: Manually casting the variable type.
+	-> COERSCION: JavaScript handles the change behind the scenes.
+
+!!! The "+" Operator does type coercion first, so it concatenates if its used with a string.
+
+	Conversion:
+	
+	-> Number(stringVar) 	-> Just gives a converted version, the type in the variable remains the same·    25
+	
+	
+//////////////////////////////////////////////////	STATEMENT AND EXPRESION
+
+	· EXPRESION: A line of code that will produce a value.
+	· STATEMENT: A piece of code that will not produce a value on its own.
+	
+//////////////////////////////////////////////////	TRUTHY AND FALSY VALUES!
+
+		Values that are not TRUE and FALSE, but will become when converted to BOOLEAN.
+		
+		-> FALSY VALUES:
+			· 0 (number zero)
+			· "" (empty string)
+			· undefined
+			· null
+			· NaN (not a number)
+			
+		-> TRUTHY VALUES -> ANY OTHER VALUE IS TRUTHY
+		
+	< SHORTCIRCUIT || AND && OPERATORS > 	-> THESE OPERATORS CAN REICEVE AND RETRIEVE ANY DATA TYPE.
+		-> USEFUL TO EG. STORE VALUE IN A VARIABLE INSTEAD OF UNDEFINED (ASSING DEFAULT VALUE WITH OR). 
+		-> CAN BE USED TO REPLACE AN IF-ELSE TO CHECK SMT TO DO STM (SHORTCIRC. AND OPERATOR).
+		
+

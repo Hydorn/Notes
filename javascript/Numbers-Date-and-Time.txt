@@ -1,0 +1,80 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					NUMBERS
+	! In javascript all numbers are stored as floating point numbers (That's why there's just one tipe for them).
+	! Are stored binary. Floating points can give wrong answers (Eg. 0.1).
+	
+	· TYPE COHERSION/CONVERSION AND PARSE
+
+> CONVERSION/COHERSION:
+	> Number('23'); -> Conversion
+	> +'23'		-> Cohersion
+	
+> PARSING:
+	> Number.parseInt('30px', OPT)
+	> Number.parseFloat
+	
+	-> A method applied to the Number function (FUNCTION ARE ALSO OBJECTS).
+	-> Tries to parse and convert the number even if it contains characters.
+	-> MUST START WITH NUMBERS -> OTHERWISE WILL RETURN NaN.
+	-> Second parameter indicates with an INT the BASE for the Number conversion (2, 8, 10,	16).
+	-> There's no need to call them on the object number, but provides a NAMESPACE (SEE MORE ABOUT JS NAMESPACES). 
+	
+	> Number.isNaN('value') -> Returns boolean
+	> Number.isFinite('value') -> Returns boolean (A number divided by zero returns "Infinity").
+	
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				BIGINT (ES2020)
+				
+> All number are stored in 64 bit (Only 53 are actually used to store the digits, rest for the decimal position and sign).
+> So there's a limit in how big numbers can be.
+> The limit can be seen with : Number.MAX_SAFE_INTEGER
+
+	> BIGINT States for Big Integer, and allows to store numbers as big as we want.
+
+	· If we write a big number followed by the character "n", it will be converted into a BIGINT.
+	Eg: 12389172398798457938754938475987345n; 	-> Is BIGINT type.
+	
+	· We can also declare a BIGINT with the BigInt function:
+	Eg: BigInt(19230918230918230198230192);
+	
+> OPERATORS WORKS ALL THE SAME.
+> WE CAN'T OPERATE BigInt WITH REGULAR NUMBERS.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				DATES
+> We need to first create a date.
+> There's 4 ways to do it, all with the "new Date()" function, but accepts different parameters.
+
+	1º · const now = new Date();					-> Stores te actual date and time.
+	
+	2º · const date = new Date('Aug 02 2020 18:05');		-> Takes value from a string.
+	
+	3º · const date = new Date(2037, 10, 19, 15, 23, 5);		-> Takes value from ints : Year, month, day, hour, minute, second. 
+										(Month is 0 based: 0 - 11).
+	4º · const date = new Date(0); 					-> Takes the amount of milliseconds passed since the beggining of the unix time.
+										Jan 01 1970 UTC.
+										
+
+> We can use methods on DATES:
+	· .getFullYear(): Returns the year int.
+	
+	· .getMonth() 	: Returns the month int, zero based.
+	
+	· .getDate()	: Returns the day int.
+	
+	· .getDay()	: Returns the day int of the week (1-7).
+	
+	· .getHours()	: Returns the hour int (0-23).
+	
+	· .getMinutes() : Returns the minutes int.
+	
+	· .getSecods()  : Returns the seconds int.
+	
+	· .toISOString(): Returns a string with ISO international format.
+	
+	· .getTime()	: Returns the time stamp from the date.
+	
+	· .setFullYear(): We pass an int as an argument, and it sets the date with that int as a year. 
+	
+	. setMonth / setDate / setDay / ... /

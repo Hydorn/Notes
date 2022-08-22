@@ -1,0 +1,78 @@
+////////////////////////////////////////////////		 	FUNCTIONS
+	 	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+						FUNCTION DECLARATION | FUNCTION EXPRESSION
+
+	· FUNCTION DECLARATION:
+		"Normal" way of implementing a function, with the function reserved word declaration.
+		
+		· Eg -> function funcName (param) { func body; return x;}
+		
+	· FUNCTION EXPRESSION | ANONIMOUS FUNCTIONS:
+		We declare an anonimous function and store it inside a variable.
+		
+		· Eg -> const funcName = function (param) {func body; return x;}
+		
+	THE DIFFERENCE
+		-> WE CAN CALL FUNCTION DECLARED (FUNCTION DECLARATION) BEFORE THEY APPEAR IN THE CODE. A FUNCTION CALL BEFORE ITS DEFFINED. (HOISTING)
+		-> WE CAN'T DO THE SAME WITH FUNCTION EXPRESSIONS.
+		
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+						ARROW FUNCTIONS
+
+	IT'S AN ESPECIAL FORM OF FUNCTION EXPRESSION, SHORTER AND FASTER TO WRITE.
+	
+	Eg:
+		param => {func body or what we want to return} 			"{},(), return" are not needed if body is just a line, or just one parameter.
+		
+		
+		DIFFERENCE -> ARROW FUNCTION DON'T GET A "THIS" KEYWORD!!
+		
+		
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+						DEFAULT PARAMETERS
+	
+	Might be useful.
+	
+	Before it would be done with sometime similar to the logical assign operators.
+	
+	Now (ES6+)
+	
+	function doSomething (param1 = 1, param2 = 2, param3 = 3){ //code// }
+	
+		In case one of the "doSomething" function parameters weren't declared on it's call
+		It would assing the default value (1, 2, 3).
+		It accept expressions after the equal sign and can put other param. to calculate dynamically.
+		
+	> Set a param to UNDEFINED to skip and get the default.
+	
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+						VALUE VS REFERENCE
+
+	PRIMITIVES ARE PASSED AS VALUE, THE ORIGINAL VALUE HENCE, IT'S NOT MODIFIED.
+	
+	OBJECTS ARE PASSED AS REFERENCE (POINTER TO THE MEMORY LOCATION).
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					FIRST-CLASS AND HIGHER-ORDER FUNCTIONS
+					
+	· FIRST CLASS FUNCTIONS: Functions are treated as "first-class citizens", they're just treated as values. 
+				 Functions are just another "type of object.
+				 That's why we can store them into variables, set them as methods in objects and even
+	we can pass function as arguments to other functions (addEventListener). Also RETURN FUNCTION FROM FUNCTIONS.
+	
+	As they're objects, there's also function METHODS we can call on functions.
+	This let's us write HIGHER-ORDER FUNCTIONS.
+	
+	· HIGHER-ORDER FUNCTIONS: A function that receives ANOTHER FUNCTION as a parameter (addEventListener).
+				  Or a function that RETURNS anoter function.
+				
+				  The parameter function is called "callback function" -> will be called later.
+				  
+	THEY HELP TO CREATE A HIGH LEVEL OF ABSTRACTION.
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+								THE BIND METHOD
+								
+	> AS WELL AS THE CALL METHOD (SEE LATER) ALLOWS US TO MANUALLY SET THE "THIS" KEYWORD (FOR ANY FUNCTION CALL).

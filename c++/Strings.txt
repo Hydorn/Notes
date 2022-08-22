@@ -1,0 +1,210 @@
+////////////////////////////////////////////////////////////////////	CONSTRUCTORS
+
+String class constructors (required the header file "string")
+
+-> string objName = value
+	eg. string Name = "Emanuel";
+	
+-> string objName(Value)
+	eg. string Name("Emanuel");
+	
+-> string objName(str, n)
+	"creates and initialize a string with a substring obj str, starting at index n".
+	
+-> string objName(str, n, p)
+	"Same as last, starts at index n, contains p characters".
+
+-> string objName(n, char)
+	"Creates and initialize a string obj of n copies of the character "char"";
+	
+-> string objName;
+	"Creates and initialize a string obj. to represent an empty char sequence (same as string objName = ""), the lenght of the string is 0";
+	
+	
+	
+//////////////////////////////////////////////////////////////////// 	OUTPUT-INPUT
+			
+-> cout	-> general-purpose screen output obj.
+
+-> cin	-> general-purpose keyboard input obj.
+	!Stops reading string input whe white space is encountered.
+	
+-> getline(cin, strObj, char)
+	-> general-purpose keyboard input FUNCTION that inputs all characters entered, stores them in the string strObj, and stops accepting chars whe it receives a newline char (\n);
+	!char is an optional parameter, if its not found, getline will read and store till the newline char.
+	But if it is defined, will store untile it receives "char".
+	whichever char it is.
+
+!!! Strange output can happen if cin and getline are used together.
+	eg. -> if cin is used to store smt before the getline, user iputs the value and presses enter... This, stores the value in the variable, but leaves the "\n" in the buffer.
+	Whe getline is reached, picks up the "\n" from the buffer and terminates any further input.
+	^Solution
+		(1) Don't mix cin with getline() in the same program.
+		(2) Follow the cin input with a call to cin.ignore().
+		(3) Accept the "\n" key in a char var, then ignore it.
+		
+//////////////////////////////////////////////////////////////////// 	STRING MANIP. METHODS
+			
+-> .length() | (int)
+	-> Returns the lenght of the string.
+	
+-> .size() | (int)
+	-> Same as length.
+
+-> .at(int index) | (char)
+	-> Returns the char found at the specified index.
+	Trows an exception if the index is nonexistent.
+	
+-> .compare(str2) | (int)
+	-> Compares the string to "str2". Returns negative value if the given string is less than "str2", 0 if they're equal, and a positive if the given string is greater than "str2".
+	
+-> c_str() 
+	-> Return the string as a null-terminated C-string (array of char).
+	
+-> .empty() | (bool)
+	-> Returns true if the string is empty, otherwise returns false.
+	
+-> .erase(ind, n)
+	-> Removes n characters from the string, starting at index ind.
+	-> If n it's not defined, removes all characters from the index ind until the end of the string, and the length of the string becomes ind.
+	
+-> .find(str) | (int)
+	-> Returns the index of the first ocurrence of the str in the complete string. (eg. string1.find("The"))
+	-> Can have a second parameter (int ind) --> Functions the same way, with the search beggining at the index ind.
+	
+-> .find_first_of(str, ind) | (int)
+	-> Returns the index of the first occurrence of any character in str in the complete string, with the search starting at index "ind".
+	
+-> .find_first_not_of(str, ind) | (int)
+	-> Returns the index of the first occurrence of any character NOT in str in the complete string, with the search starting at index "ind".
+	
+-> .insert(ind, str) | (void)
+	-> Inserts the string "str" into the complete string, starting at index "ind".
+	-> The first char of "str" will be foud at index "ind". (!)
+	
+-> .replace(ind, n, str)
+	-> Removes "n" chars in the string obj, starting at index "ind" and inserts the string "str" at index position "ind".
+	
+-> .substr (ind, n) | (string)
+	-> Returns a string consisting of n characters extracted from the string, starting at index "ind". If n is greater that the remaining number of characters, the rest of the string is used.
+	
+-> .swap(str) | (void)
+	-> Swaps chars in "str" with thos in the first string.
+
+-> [ind] 
+	-> Returns the character at the index "ind" without checking whether ind is a valid index (like in arrays).
+	
+-> = 	-> Assignment. Also converts a C-string to a string.
+	
+-> +	-> Concatenates two strings.
+
+-> +=	-> Concatenation and assingment.
+
+//////////////////////////////////////////////////////////////////// 	STORAGE AND EQUALITY COMPARISON
+
+	Two string can be compare fo equality by using the standard relational operators. Each char in a string is stored in binary with de ASCII or Unicode code.
+	Although different, they have some common characteristics:
+	
+	> In both a black precedes (less than) all letters and numbers.
+	> Letters of the alphabet are stored in order from A to Z.
+	> Digits are stored in order from 0 to 9.
+	> Digits come before (less than) uppercase letters.
+	> Uppercase letters are followed by lowercase letters.
+	
+	Whe two string are compared, their chars are compared a pair at a time (both first char, both second, and so on and so forth).
+	
+////////////////////////////////////////////////////////////////////	 CHARACTER MANIPULATION FUNCTIONS
+
+		ALL INT FUNCTIONS
+	
+-> isalpha(char)
+	-> Returns a true (non-zero int) if "char" evaluates to a letter; otherwise it returns a false (zero int).
+
+-> isalnum(char)
+	-> Returns true if "char" evaluates to a letter or a digit; otherwise returns a false.
+	
+-> isupper(char)
+	-> Returns true if "char" evaluates to an uppercase letter. Otherwise --->
+
+-> islower(char)
+	-> Returns true if "char" evaluates to a lowercase letter. Otherwise --->
+	
+-> isdigit(char)
+	-> Returns true if "char" evaluates to a digit (0 to 9). Otherwise --->
+
+-> isascii(char)
+	-> Returns true if "char" evaluates to an ASCII character. Otherwise --->
+	
+-> isspace(char)
+	-> Returns true if "char" evaluates to a space. Otherwise --->
+	
+-> isprint(char)
+	-> Returns true if "char" evaluates to a printable char. Otherwise --->
+	
+-> isctrl(char)
+	-> Returns true if "char" evaluates to a control character. Otherwise --->
+	
+-> ispunct(char)
+	-> Returns true if "char" evaluates to a punctuation char. Otherwise --->
+
+-> isgraph(char)
+	-> Returns true if "char" evaluates to a printable character other than white space. Otherwise --->
+	
+-> toupper(char)
+	-> Retrurns the UPPERCASE equivalent if "char" evaluates to a lowercase char. Otherwiser returns the character code without modification.
+	
+-> tolower(char)
+	-> Retrurns the LOWERCASE equivalent if "char" evaluates to an uppercase char. Otherwiser returns the character code without modification.
+	
+	
+////////////////////////////////////////////////////////////////////	 BASIC CHARACTER I/O FUNCTIONS
+
+-> cout.put(char)
+	-> Places ther character value of "char" on the output stream.
+	
+-> cin.get(charVar)
+	-> Extracts the next char from the input stream and assings it to the variable "charVar".
+
+-> cin.peek(charVar)
+	-> Assings the next char from the input stream to the variable "charVar" without extracting the char from the stream.
+	
+-> cin.putback(char)
+	-> Pushes a charcter value of "char" onto the input stream.
+
+-> cin.ignore(n, char)
+	-> Ignores a maximum of the next "n" input characters, up to and including the detection of "char".
+	If no args are specified, ignores the next single character on the input stream.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////    INPUT DATA VALIDATION    /////////////////////////////////////////////////////////
+
+
+	One of the mayor uses of strings in programs is for user-input validation!
+	
+	-> A common method of validating is accepting all input as string. 
+	Then each character can be checked to make sure it complies with the requested data type.
+	
+	After this check, and data is verified to be correct, the string is converted, using functions.
+	
+	
+////////////////////////////////////////////////////////////////////	 C-STRING CONVERSION FUNCTIONS
+	
+-> atoi(str) | (int)
+	-> Converts "str" to an integer. Conversion stops ath the first non-integer character.
+	
+-> atof(str) | (double)
+	-> Converts "str" to a double-precision number. Converion stops at the first char that can't be interpreted as a double.
+	
+-> itoa(integer) | (char[])
+	-> Converts "integer" to a character array. The space allocated for the returned characters must be large enough for the converted value.
+	
+////////////////////////////////////////////////////////////////////	 VALIDATION				!!! See exception handling !!!
+
+	In case of an integer to validate the data entered must check the conditions:
+	
+		> The data must contain at least one character.
+		> If the first character is a + o - sign, the data must contain at least one digit.
+		> Only digits from 0 to 9 are acceptable following the first char.
+

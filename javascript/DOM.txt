@@ -1,0 +1,57 @@
+//////////////////////////////////////////		DOM (DOCUMENT OBJECT MODEL)
+	
+	Is a programming interface for web documents. Represents the page so programs can change the document structure, style, and content.
+	
+	DOM represent the document as nodes and objects -> programming languages can interact with the page.
+	
+	All of the properties, methods, and events available for manipulating and creting web pages are organized into objects. Eg: DOCUMENT object.
+	It represents the document itself.
+		
+	DOM is bult using multiple APIs that work together. Core DOM defines the entities describing any document and the bojects within it.
+	This expands as needed by other APIs. (Eg: HTML DOM API, SVG API).
+	
+	Can use the DOM API for the DOCUMENT or WINDOW object to manipulate the document itself.
+	
+////////////////////////	DATA TYPES OF THE DOM
+
+	· DOCUMENT : When a member returns an object of type DOCUMENT, this object is the root document object itself.
+	
+	· NODE : Every object located within a document is a node of some kind. 
+		In an HTML document, an object can be an element node but also a text node or attribute node.
+		
+	· ELEMENT : Is based on node. It refers to an element or a node of type element returned by a member of the DOM API.
+	
+	· NodeList : Is an array of elements, like the kind returned by the method "querySelectorAll"
+	
+	· Attr : When an attribute is returned by a member, it is an object reference that exposes a special interface for attributes.
+		Attributes are nodes in the DOM just like elements are.
+		
+	· NamedNodeMap : Is like an array, but items are accessed by name or idex.
+	
+////////////////////////	SELECTING ADN MANIPULATING DOM ELEMENTS WITH JS
+
+	APPLIED TO THE DOCUMENT OBJECT.
+	
+	-> .querySelector(selector)  
+		Selector exactly as css. Must be a string.
+		
+	-> .querySelectorAll(selector)		
+	
+	-> .getElementById(selector)
+	
+	ONCE SELECTED, ELEMENTS CAN BE MODIFIED AS OBJECTS.
+	
+	////////////////////////	MODIFYING STYLES (CSS)
+	
+	· USING THE OBJECT NOTATION -> CSS PROPERTY NAMES MUST BE USED IN CAMMELCASE -> THE VALUE OF THE MODIFIED PROPERTY MUST BE A STRING.
+		-> THAT WAY CSS IS APPLIED IN THE HTML (IN-LINE STYLES).
+		
+	· WORKING WITH CLASSES : -> Select element -> .classList property -> add/remove method with string parametters of clases.
+	
+////////////////////////	EVENTS HANDLING
+
+	We need to first select an element, then add an event listener to that element.
+	
+		-> element.addEventListener(event, function)
+		
+		

@@ -1,0 +1,26 @@
+//////////////////////////////////////////////////	NULLISH COALESCING OPERATOR (ES6)
+
+	const guest = restaurant.numGuests || 10 ; // RETRIEVES THE NUMBER FROM THE OBJECT, IF IT DOES NOT EXISTS, SHORTCIRCUITS AND APPLIES 10.
+		-> This have a problem with "0". Works with Truthy values.
+		
+-> Instead of doing that we can use the new operator (NULLISH COALESCING (??)).
+		-> This works with Nullish values. (Null - Undefined)
+	const guest = restaurant.numGuests ?? 10;
+
+
+////////////////////////////////////////////////// 	LOGICAL ASSINGMENT OPERATORS (ES2021)
+	
+	obj.name = obj.name || 'carlos'; -> set default if its not found
+	
+		· NOW WITH OR LOGICAL ASSIGNMENT OPERATOR
+	
+	obj.name ||= 'carlos; Same as before.
+	
+		· NULLISH ASSIGNMENT OPERATOR
+	
+	obj.numGuests ??= 10;
+		-> Solves the "0" case for being a falsy value with the OR shortcircuit.
+		-> Same as "obj.numGuests = obj.numGuests ?? 10;"
+		
+		· AND LOGICAL ASSIGNMENT OPERATOR
+		 

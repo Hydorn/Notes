@@ -1,0 +1,57 @@
+/////////////////////////////////////////////////	ARRAYS
+
+	· CAN STORE ANY DATA TYPE IN ONE ARRAY!! 
+	· CAN STORE THE VARIABLE NAME (TE POSITION WILL BE OCUPIED WITH THE CONTENT OF THE VARIABLE).
+	· CAN STORE ARRAYS INSIDE OF AN ARRAY.
+	
+///////////////////////////////////////////////// 	CREATING ARRAYS
+
+	-> BRACKET NOTATION (Literal sintax)
+		Eg: const arr = [1,2,3,4];
+	
+	-> NEW KEYWORD
+		Eg: const arr = new Array(1,2,3,4);
+		
+		!! can change content of array even declared with const
+			ONLY PRIMITIVE VALUES ARE IMMUTABLE WHEN DECLARED WITH CONST
+		
+/////////////////////////////////////////////////	ARRAY METHODS
+
+	-> .length :
+		· Returns the amount of elements on the array.
+	
+	-> .push(x) :
+		· Adds element "x" to the end of the array. Returns new length of the array.
+	
+	-> .unshift(x) : 
+		· Adds element "x" to the beggining of the array. Returns new length of the array.
+		
+	-> .pop() :
+		· Removes last element of the array. Returns the removed element.
+		
+	-> .shift() :
+		· Removes first element of the array. Returns the removed element.
+		
+	-> .idexOf(x) :
+		· Returns the index of the element "x". Returns -1 if the element was not found.
+		
+	-> .includes(x) :
+		· Returns boolean value if the element was found or not in the array. Uses strict equality (Doesn't do type coercion).
+		
+	-> .entries() :
+		· Returns an array which has an array in each position, with index and element.
+		
+/////////////////////////////////////////////////	FOR OF - ARRAY LOOPING (ES6)
+
+	-> Instead of declaring a complete for
+		-> for (const i=0; i < arr.length; i++)
+	
+	-> We declare a for-of loop:
+		. for (const item of arr)
+	
+		-> Automatically loops over the array giving us each item in each iteration.
+	
+	! We can use BREAK and CONTINUE keyword.
+	
+	If we want the current index -> Use the ".entries" method.
+	

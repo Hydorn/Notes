@@ -1,0 +1,98 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+								ASYNCHRONOUS JAVASCRIPT
+							
+	· Most code is SYNCHRONOUS -> EXECUTED LINE BY LINE AS IT APPEARS IN THE CODE(SEQUENCE).
+		This generates a block in the execution if a lines takes too much to execute.
+	
+	! Asynchoronous code > CODE IS EXECUTED AFTER A TASK THAT RUNS IN THE "BACKGROUND" FINISHES.
+		-> Execution is NON-BLOCKING.
+		Execution doesn't wait for an asynchronous task to finish it's work.
+		
+	Just certain functions work async (eg: timers).
+	
+	· Use cases: 	-> Timers
+		     	-> Image loading
+		     	-> API 
+		     	-> AJAX calls (Probably most important use case)
+		     	
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							AJAX : ASYNCHRONOUS JAVASCRIPT AND XML
+					
+	> Allows us to communicate with remote web servers in an asynchronous way.
+	> With AJAX calls we can REQUEST DATA from web servers dynamically. (CRUD REQUESTS)
+	
+	· XML : DATA FORMAT THAT WAS WIDELY USED TO TRANSMIT DATA ON THE WEB.
+		IS NOT USED ANYMORE.
+	
+	· JSON : MOST USED DATA FORMAT TODAY.
+	
+-> AJAX CALL : 
+	> XML HTTP REQUEST function (MOST OLD SCHOOL METHOD OF DOING AJAX CALLS)
+		Before, they were handled by events and callback functions.
+		(Now with promises).
+		
+	<----!code sample ---->
+	
+const request = new XMLHttpRequest();
+request.open('CRUD OPERATION OF REQUEST', 'LINK URL REQUEST');
+request.send();
+		> This is gonna wait in the backgroud as the data returns. (ASYNC)
+		> We need a callback function to know when the data has finished arriving.-
+
+request.addEventListener('load', callbackF);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							CALLBACKS AND CALLBACK-HELL
+											
+	> To make an AJAX call depend on other (so the order in which each ends is set).
+	> Before, all run in parallel and we have no way of knowing beforehand wich one will end first.
+	
+		> Now we have an AJAX CALL inside the first callback
+			> If we need more request, this will end up in really nested callbacks (callback hell).
+			
+			
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 						PROMISES (A WAY TO AVOID CALLBACK HELL) - ES6
+ 						AND FETCH API (NEW WAY OF AJAX CALLING)
+ 	> FETCH API :
+ 		 · For basic ajax calls
+ 		 
+ 	const request = fetch('url');			-> That's it, at least to simple AJAX calls, the fetch api can receive a lot more parameters.
+ 		> It inmediately returns a promise stored in the variable.
+ 		
+ 	> PROMISE : 
+ 		· An object that is used as a placeholder for the future result of an asynchronous operation.
+ 			" A container for a future value".
+ 			
+ 		· Thanks to PROMISES we no longer rely on events and callbacks to handle asynchoronous results.
+ 		· We now can CHAIN PROMISES for a sequence of asynchronous operations (escape of callback hell).
+ 		
+ 		· PROMISES LIFECYCLE (STATES) : 
+ 			- PENDING : Before the value is available.
+ 	
+ 			- SETTLED:
+ 				> FULFILLED : Succesfully got the value.
+ 				> REJECTED : An error happened.
+ 			! A PROMISE IS ONLY SETTLED ONCE (IT REMAINS EITHER FULFILLED OR REJECTED).
+ 					
+ 	! WE ARE ABLE TO HANDLE THIS DIFFERENTS STATES IN OUR CODE.
+ 	
+ 	> CONSUME A PROMISE : When we already have a promise (Eg. Return from fetch API).
+ 							Or buil a promise, in order to consume it.
+ 							
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+							CONSUMING PROMISES 
+> Consuming the promise returned from the FETCH function.
+	 
+· WE USE TE "THEN" METHOD (AVAILABLE FOR ALL PROMISES).
+	> The THEN method receives a callback FUNCTION to use once the PROMISE is FULFILLED.
+	> That callback function receives ONE argument that is the result value of the fulfilled 
+	the promise(all request data, header+requested data).
+	> On the response method we use the JSON method to actually read the data.
+	> JSON method is available in al fetch responses, and is ASYNC so IT ALSO RETURNS A PROMISE
+	  (We should use the then method again).
+		
+· CHAINING PROMISES:
+	> FROM THE THEN METHOD WE RETURN ANOTHER FETCH (ANOTHER PROMISE) -> 
+	SO WE CHAIN ANOTHER THEN METHOD.
+		

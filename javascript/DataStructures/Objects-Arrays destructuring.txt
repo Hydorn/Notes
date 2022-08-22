@@ -1,0 +1,56 @@
+/////////////////////////////////////// 	ARRAY DESTRUCTURING
+	
+DESTRUCTURING IS LIKE BREAKING A COMPLEX DATA STRUCTURE INTO A SIMPLER ONE LIKE A VAR
+
+IN ARRAYS WE USE IT TO STORE ARRAY COMPONENTS IN VARIABLES IN A SIMPLE WAY.
+
+Eg.
+	const arr = [2,3,4,5];
+	const a = arr[0];
+	const b = arr[1];
+	const c = arr[2];
+	
+	Is the same as:
+	
+	const arr = [2,3,4,5]
+	const [a,b,c] = arr;  -> Looks like an array, but is a destructuring operator. 
+	
+	· The original array remains the same.
+	· It's not needed to take out all elements.
+	· Can jump/ommit elements desctructuring. ( [first, , second] ).
+	· Can switch variables using destructuring array.
+	· Receive and store multiple values returned from a function.
+	· Can destructure nested array.
+	· Can set default values destructuring array of unknown length. (Try take 3 elements of an array with 2)
+			-> [p=1, q=1, r=1] = arr;	-> in the array is shorter, the 1 is asigned instead of undefined.
+			
+/////////////////////////////////////// 	OBJECT DISCTRUCTURING.
+
+TO DISTRUCTURE OBJECTS WE MUST USE CURLY BRACES AND EXACT SAME NAMES AS PROPERTIES.
+
+WE DON'T NEED TO MANUALLY SKIP ELEMENTS. JUST DEFINE THE KEY-NAME.
+
+Eg.
+	const {keyName1, keyName2, keyName3} = objName;
+	
+	-> If we want the variable name to be different that the key:
+	
+	const {key1: varName1, key2: varName2 } = objName;
+	
+	· Can also set default values.
+	· Useful to set defaul whe retrieven data from API, etc;
+	
+	To mutate variables as destructuring
+	
+	let a = 111;
+	let b = 777;
+	const obj = {a:3, b:5 , c:33};
+	
+	{a, b} = obj;  => This will trow an error. But won't if we put in parénthesis.
+	({a,b} = obj); 
+	
+	· Can destructure nested objects.
+	!!! Can pass an object as an argument ---> CAN DESTRUCTURE THE OBJECT RECEIVED IN THE FUNCTION DECLARATION!
+	
+	
+	

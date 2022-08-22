@@ -1,0 +1,88 @@
+/////////////////////////////////////////////////	SETS
+	A SET IS A COLECTION OF UNIQUES VALUES.
+	
+· DEFINE A SET:
+const set = new Set(argument);
+
+	-> argument must be an iterable (strings, arrays, set, map)
+	
+	
+	· If we pass repeated values, deletes duplicates (STORE UNIQUE VALUES)
+	· Can hold multiple data types.
+	· Order of elements in SET is irrelevant (not like an array).
+	
+/////////////////////////////////////////////////	SET METHODS
+
+	· .size : Returns nº of elements of the set
+	
+	. .has(x) : Returns boolean if "x" is on the set.
+	
+	· .add(x) : If "x" it's not in the set is added.
+	
+	· .delete(x) : Deletes an element from a set.
+	
+	· .clear : Clears the set (removes all elements).
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+	We can't retrieve an element of a set like in arrays:
+	
+	set[0] ??? THAT IS NOT VALID. 
+	THERE'S NO INDEX.
+	THERE'S NO WAY TO RETRIEVE AN ESPECIFIC VALUE.
+	
+	EXCEPT LOOPING -> RETRIEVE EACH INDIVIDUALLY.
+	IS AN ITERABLE, SO WE CAN LOOP OVER IT.
+		
+	WE CAN KNOW IF A VALUE IS OR ISN'T IN A SET. 
+	
+!!!!!	<BIG USE TO REMOVE DUPLICATES FROM AN ARRAY.>
+
+
+/////////////////////////////////////////////////	MAPS
+
+	Is a data structure that we can use to map values to keys.
+	As in objects data is stored in key-value pairs.
+    ->  DIFFERENCE: KEYS CAN BE ANY DATA TYPE(CAN EVEN BE OBJECT, ARRAYS OR OTHER MAPS).
+    
+	<Declare a Map>
+	
+	const newMap = new Map();	> With the new keyword we define an empty Map
+	newMap.set('arguments');	> With the .set Method we define it's content
+		
+		OTHER WAY OF DEFINE IT'S CONTENT.
+	
+	cons newMap = new Map(arg); 	> The argument is an array of arrays.
+					Each of the contained arrays will have two elements:
+					First: key, second: value.
+						
+/////////////////////////////////////////////////	MAPS METHODS
+
+	· .set(arg1, arg2) : Receives a pair of values, that are added to the Map. Key: "arg1", value: "arg2".
+				Also returns the actualized Map. Tha allows to chain various .set() calls.
+	
+	· .get(key) : We pass key as argument and returns the value stored in "key".
+	
+	· .has('key') : Checks is has key value 'key'.
+	
+	· .delete('key') : Delets key-value pair with key 'key'.
+	
+	· .size : Returns int with the number of elements.
+	
+	· .clear() : Deletes all content in the map.
+	
+/////////////////////////////////////////////////	MAPS ITERATION
+
+	USE FOR-OF TO ITERATE A MAP
+	
+		· for (const [key, value] of newMap)	> We desctructure the map, because returns each element
+								as an array with key-value (array(2)).
+								
+//////////////////////////////////////////////////////////////////////////////////////////////////
+					OBJECT TO MAP
+					
+· We use the Object.entries(obj) method that returns an array of arrays with key-values from our object.
+	
+					MAP TO ARRAY
+· We create an array, and use the spread operator, generates an array of arrays.
+

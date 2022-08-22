@@ -1,0 +1,41 @@
+////////////////////////////////////////////////////////////////////	POINTERS
+
+	Altough other languages provide pointers, c++ extends this feature by providing pointer arithmetic.
+	-> Pointer values can be added, subtracted, and compared.
+	
+	Fundamentally, pointers are simply variables uised to store memory addresses.
+	They allow to access the addresses of variables used, and this gives a view into a computer's basic storage structure.
+	-> Resulting in capabilities and programming power that aren't available in high-level languages.
+	
+		
+////////////////////////////////////////////////////////////////////	ADDRESSES AND POINTERS
+
+	-> To display the addressof a variable, can use de address operator (&).
+		Which means, "the address of".
+		Eg: &varName = "The address of 'varName'"
+	When used to declaring reference arguments, the ampersand refers to the data type preceding it.
+		-> · double& varName |
+		-> · double &varName | 
+		
+	-> Both declarations are read as "num is the address of a double"/"num is a reference to a double"
+	
+	!! STORING ADDRESSES
+		-> YOU CAN STORE ADDRESSES IN SUITABLY DECLARED VARIABLES.
+		-> WHE YOU STORE AN ADDRESS TO A VARIABLE, IT'S CALLED POINTER VARIABLE/POINTER.
+		
+	POINTERS ARE SIMPLY VARIABLES USED TO STORE THE ADDRESSES OF OTHER VARIABLES.
+	
+////////////////////////////////////////////////////////////////////	USING ADDRESSES
+
+	-> To use stored address, C++ provides an INDIRECTION OPERATOR (*).
+		The * symbolm whe followed by a pointer (whith a space permitted both before and after the *)
+		means "the variable whose address is stored in..."
+		
+	=> If the varName is a pointer (address variable)
+		=> * varName -> means "the variable whose address is stored in varName.
+		=> Usually shortened to "the variable pointed to by varName".
+		
+	*! The name INDIRECT ADDRESSING is used to describe it, due to his indirect way of retrieve stored data.
+		-> Using a pointer requires the computer to do a double lookup.
+		
+	WHY POINTERS THEN? -> The answer lies in the intimate relationship between pointers and arrays and the ability of pointers to create and delete variable storage.

@@ -1,0 +1,51 @@
+//////////////////////////////////////////////////	STRINGS
+
+	· We can access character with bracket notation like in arrays.
+	
+//////////////////////////////////////////////////	STRINGS METHODS.
+
+	To call methods on strings javaScript converts the string primitive into Object (boxing). So then we can apply the object methods.
+	All of this happens behind the scenes.
+	
+	· .length : Returns an int with the length (nº of chars).
+	
+	· .indexOf('char') : Returns the index of the first occurrence of 'char'.
+	
+	· .lastIndexOf('char') : Similar to previous. Returns the last occurrence. 
+		-> Both can work with char, of strings.
+		-> Both return -1 if argument was not found.
+		
+	· .slice('param1', 'param2') : Returns the subString beggining at 'param1'. If defined, ending at 'param2'. 
+				       The value at index 'param2' is not included.
+				       · We can pass a negative argument, it will start counting at the end of the string.
+				       Eg. slice(-2) -> Returns a string of the last 2 character of the original string.
+				       · We can pass a negative SECOND argument (beggins at first param ends where the negative says).
+				        	
+	· .toLowerCase() : Returns the String that is applied to, all characters in lower case.
+	· .toUpperCase() : Returns the String that is applied to, all characters in upper case.
+	
+	· .trim() : Removes whitespace characthers from the start and the end of the string.
+		    Whitespaces includes spaces, tab, etc.
+	
+	· .replace('x', 'y') : Replaces the first occurrence of 'x' for 'y'.		"if replaceAll does't work use regular expression"
+			       Also works for entire words.				     <"SEE MORE ABOUT REGULAR EXPRESSIONS">
+			       
+	· .replaceAll('x', 'y') : Same as last. Replace all occurrencies.
+	
+	· .includes('x') : Returns bool if the string containes 'x'.
+	
+	· .startsWith('x') : Returns bool if the string starts with 'x'.
+	· .endsWith('x') : Returns bool if the string ends with 'x'.
+	
+	· .split(arg) : Returns an array of the string, each element is originated from the original string, split in every "arg" encounter.
+			Eg. "this-is-a-string".split(-) 
+				Returns: ["this", "is", "a", "string"].
+				
+	· .joint(arg) : Opposite of split, used in an array of strings, generates a mayor string using "arg" as separator.
+	
+	· .padStart(length, filler) : Specify the desired length of the output string, if needed with fill the begining/end with the "filler" char.
+	  .padEnd(length, filler)		Until it reaches the desired length.
+					
+					
+	· .repeat(n): Returns a string that consist of the original, repeated "n" times.
+	
