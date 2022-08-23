@@ -1,0 +1,66 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> OBJECT ORIENTED PROGRAMMING (OOP): A PARADIGM BASED IN THE CONCEPT OF OBJECTS	<
+			
+· OBJECTS MAY CONTAIN DATA, AND METHODS. WE PACK THE DATA AND IT'S CORRESPONDING BEHAVIOUR.
+· OBJECTS ARE SELF-CONTAINED PIECES OF CODE.
+· ARE BUILDING BLOCKS OF APPLICATIONS, AND INTERACT WITH ONE ANOTHER.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> CLASSES <
+	
+· LIKE "BLUEPRINTS" FROM WHICH WE CAN CREATE NEW OBJECTS.
+	!!! JAVASCRIPT DOES NOT SUPPORT REAL CLASSES. IT WORKS A BIT DIFFERENT.
+	
+	· INSTANCES : OBJECTS CREATED FROM A CLASS.
+			WE CAN CREATE AS MANY INSTANCES AS WE NEED FROM OUR CLASSES.
+			
+· HOW TO DESIGN CLASSES:
+    > ABSTRACTION : Ignoring or hiding detals that "don't matter", allowing us to get an overview perspective of the
+    "thing" we're implementing, instead of messing with details that don't really matter to our implementation.
+    
+    > ENCAPSULATION : Keeping properties and methods private inside the class, so they are NOT accesible from outside 
+    the class. Some methods can be exposed as public. (as a public interface - APi).
+    	This prevents external code from accidetally manipulating internal properties/state.
+    	Also allows to change internal implemetantion without the risk of breaking external code.
+    	
+    > INHERITANCE : In OOP when we have classes closely related to one another, we can have inherit his properties 
+    from a "parent" class. Child class extends parent class.
+    	Inherintance makes all properties and methods of a certain class available to a child class, formin a
+    hierarchical relationship between classes. This allows us to reuse common logic and to model real-world relationships.
+    
+    > POLIMORPHISM : A child class can overwrite a method it inherited from a parent class (It's more complex thant that).
+    
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> OOP IN JAVASCRIPT <
+			
+· "CLASSICAL OOP" : WE HAVE CLASSES (LIKE BLUEPRINTS) AND WE CANT INSTATIATE AS MANY TIMES AS WE NEED.
+	-> INSTATIATION : CREATING AN INSTANCE (OBJECT) FROM A CLASS.
+	
+· IN JAVASCRIPT WE HAVE PROTOTYPES
+	> OBJECTS ARE LINKED TO A PROTOTYPE OBJECT.
+	> The prototype contain methods that all objects linked to it can access and use.
+									> THAS CALLED PROTOTYPAL INHERTANCE <!!!
+									
+· PROTOYPAL INHERITANCE: The prototype contains mehtods(behaviour) thar are accessible to all objects linked to that prototype.
+			> !! THIS IS DIFFERENT FROM PARENT-CHILD CLASSES INHERITANCE.
+
+· IN classical OOP, behaviour (METHODs) is COPIED from class to all  instances
+· IN JAVASCRIPT behaviour is DELEGATED to the linked protoype object.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> IMPLEMENTING PROTOTYPAL INHERITANCE <
+	How to implement OOP in JS ? 
+	There are 3 ways of doing it:
+
+   (1) - CONSTRUCTOR FUNCTIONS : 
+   	> Technique to create objects from a function.
+   	> This is how built-in objects like Arrays, Maps, or Sets are actually implemented.
+   	
+   (2) - ES6 CLASSES : 
+   	> Modern alternative to constructor function syntax.
+   	> "Syntactic sugar". Behind the scenes, ES6 CLASES works exactly like constructor functions.
+   	> ES6 classes do NOT behave like CLASSES in "CLASSICAL OOP".
+   	
+   (3) - OBJECT.CREATE() : 
+	> The easiest and most straightforward way of linking an object to a protoype object.
+	> It's not as used as the other 4 methods.
