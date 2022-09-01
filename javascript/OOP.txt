@@ -64,3 +64,75 @@
    (3) - OBJECT.CREATE() : 
 	> The easiest and most straightforward way of linking an object to a protoype object.
 	> It's not as used as the other 4 methods.
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> CONSTRUCTOR FUNCTIONS AND NEW OPERATOR <
+			
+    > We can use a function to create objects (It's a completely normal function).
+    > The only difference is that we call te function with the "new" operator.
+		!: Convension : Constructor functions start with a capital letter.
+	
+    · When a constructor function with "new" keyword is called:
+    	1 · A new {empty obj} is created.
+    	2 · Function is called. This keyword points to the {}.
+    	3 · {} is linked to the prototype (__proto__).
+    	4 · function automatically return {}
+    
+    > We can set with the "this" keyword properties inside the function, then it's returned.
+    
+    > "Instances" : Even when the obj. are not created from a class, they're called instances.
+    We can check wheter an object is an instance from it's constructor function with the "INSTANCEOF" method.
+    Is used in lowercase, and without dot notation.
+   	Eg: car instanceof Vehicles (car is the created object, and Vehicles is the constructor function).
+   	
+   	 >>>  SINTAX  <<< 
+   
+   //constructor function//
+const Person = function(firstName, birthYear){
+	// Instance properties
+	this.firstName = firstName;
+	this.birthYear = birthYear;
+	
+	//Never add method like that !
+	this.firstMethod = func---
+}
+
+//An instance of the Person constructor function
+
+const Jack = new Person(Jack, 1998); 
+
+
+	>>!! Adding methods like that is bad practice !!!
+	>> If we initialize 1000 instance of Person -> The 1000 instaces will carry 1000 copyes the method.
+	>> Use prototypal inherintance --> See next.
+   	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> USING PROTOTYPES <
+			
+   > All functions in JAVASCRIPT have a property called prototype (Also constructor functions).
+   > Every object created by a constructor function will get acces to all the methods and properties that we define on the 
+   constructor protoype property.
+   
+   	 >>>  SINTAX  <<< 
+  //Access the protype property(is an object) of the Person constructor function to add methods.
+  
+Person.prototype.methodName = function () {code here};
+
+  //Then acces the method normally.
+ 
+Object1.methodName();	
+
+  -> Object1 is an instance of person and has access to "methodName" through protypal inheritance.
+  -> It exists just one copy of the function. All instances access to that function.
+	
+  To see the prototype of an instance:
+  	· .__proto__ method --> returns the protype property/ object of the constructor.
+
+!! Important
+  · Person.prototype : Is the protoype of the instances created with the Person constructor function, not the prototype
+of the Person constructor function.
+
+  · We can also add PROPERTIES to the prototype, and we can access them from the instances, but it won't be in
+  the created oject, it will be part of the prototype.
+  -> We can check if a property in from the object itself or if it's inherited from the prototype:
+  With the method: "hasOwnProperty("propertyName");" 
