@@ -136,3 +136,130 @@ of the Person constructor function.
   the created oject, it will be part of the prototype.
   -> We can check if a property in from the object itself or if it's inherited from the prototype:
   With the method: "hasOwnProperty("propertyName");" 
+  
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> PROTOTYPE CHAIN <
+			
+    Same as it happens with the scope, and scope chain, when we try to access a method, or property that it's not defined in the
+instance, javascript will go through the PROTYPE CHAIN.
+    As we know, the prototype of instances is __proto__, so javascript will go there to find the property of method.
+    But the chain doesn't end there. If the method isn't found in the instance protype it will search in the CONSTRUCTOR FUNCTION
+PROTYPE: Object.protype.
+
+    So we have the constructor function that links instances with our protoype property, wich, being an object created by js, it's 
+protoype, is the protoype for all objects.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> ES6 CLASSES <
+			
+   Do not work like classes in c++ or java. Classes in JavaScript are just sintaxis sugar over constructor functions.
+   Classes are a special type of function.
+   So we have, like with functions, class expressions and class declarations.
+  
+-> const className =  class {};		-> class expression.
+
+-> class className {};			-> class declaration.
+
+  Inside the class we need to add a constructor method, is similar to constructor function, but is a method of a class.
+  
+  ···· sintax ····
+-> class PersonClass {
+	constructor(firstName, birthYear){
+		this.firstName = firstName;
+		this.birthYear = birthYear;
+	}
+	
+	// Methods go outside the construtor
+	// And will be ON THE PROTYPE OF THE OBJECT
+	// Same that doing Person.prototype.newMethod = ...
+	
+	newMethod(param) {code}
+}
+
+   We can also add methods to the prototype.  
+   Instantiations is the same as with constructor functions; using the "new" keyword.
+   
+   · FUNCTION DECLARATIONS ARE FUNCTIONS, SO THEY'RE HOISTED (CAN BE CALLED BEFORE THE DECLARATION).
+   · CLASSES ARE NOT HOISTED.
+   · CLASSES ARE FIRST-CLASS CITIZENS (WE CAN PASS THEM INTO FUNCTIONS AND RETURN THEM FROM FUNCTIONS).
+   · CLASSES BODY IS EXECUTED IN STRICT MODE.
+   
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> SETTERS AND GETTERS <
+  Every object in javascript can get setter and getter properties.
+  We call these special properties assessor properties (more normal ones are called "data properties").
+  Setters are functions that get and set a value, as they name says.
+  But they still look like normal properties.
+  
+  
+  ·GETTER:
+  
+  const account = {
+  	owner: "name";
+  	movements: [10,30,40,50];
+  	
+  	get latest(){ code here	}
+  	
+  }
+  
+  · We write the method with the prefix keyword "get". So when we call the method on the object, we can do it as if it was 
+  a property, and it gets the data.
+ 
+> account.latest
+ 
+ ·SETTER:
+  
+  const account = {
+  	owner: "name";
+  	movements: [10,30,40,50];
+  	
+  	set latest(parm){ code here push to the last element of array }
+  	// set MUST have one parameter
+  }
+  
+  · We can have set without get an viceversa.
+  
+> account.latest = 50; > with this push the element to the array.
+
+	· Setters and getters can be very useful for user validation (add a property with a method if it mets validation).
+	
+!!!!! SET A PROPERTY THAT ALREADY EXISTS
+
+  set fullName(name){
+    logic validation here -> this._fullName = name;
+    // We add the underscore, because the property "fullName" already exists.
+    // We need to get the value to the correct property.
+  }
+  
+  get fullName() {
+  	return this._fullName;
+  	//Sets the property "fullName" with the content of "_fullName".
+  }
+  
+  !! SEE FOR FURTHER IMPLEMENTATION.
+  
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				> STATIC METHODS <
+  EG. Array.from() -> Converts into an array, an array like structure.
+  
+  .from : IT'S NOT A METHOD ATACHED TO THE PROTOTYPE PROPERTY OF THE CONSTRUCTOR, IS ATACHED TO THE CONSTRUCTOR ITSELF.
+  SO -> ARRAYS DO NOT INHERIT THIS METHOD, BECAUSE IT'S NOT ATACHED TO THE PROTOTYPE.
+  
+  It's attached to the constructor, we can also say that the from method "IS IN THE ARRAY NAMESPACE". 
+  Another example of a static method Number.parseFloat() -> STATIC IN THE NUMBER CONSTRUCTOR.
+  
+  HOW TO IMPLEMENT:
+    · CONSTRUCTOR FUCTIONS:
+    	PERSON.staticMethod = function () {};
+    	
+    · CLASS:
+    	ADD A METHOD WITH THE "STATIC" PREFIX.
+    	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				> OBJECT.CREATE <
+				
+  Object.create works different. Not like classes or constructor functions.
+  It creates an object, and set manually the prototype (from another object).
+  You have to pass an object as an argument (which will become linked as the prototype for the new object).
+  
+  !! IMPORTANT FOR CLASS INHERITANCE.
