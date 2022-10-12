@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-								ASYNCHRONOUS JAVASCRIPT
+			> ASYNCHRONOUS JAVASCRIPT
 							
 	· Most code is SYNCHRONOUS -> EXECUTED LINE BY LINE AS IT APPEARS IN THE CODE(SEQUENCE).
 		This generates a block in the execution if a lines takes too much to execute.
@@ -16,7 +16,7 @@
 		     	-> AJAX calls (Probably most important use case)
 		     	
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-							AJAX : ASYNCHRONOUS JAVASCRIPT AND XML
+			> AJAX : ASYNCHRONOUS JAVASCRIPT AND XML
 					
 	> Allows us to communicate with remote web servers in an asynchronous way.
 	> With AJAX calls we can REQUEST DATA from web servers dynamically. (CRUD REQUESTS)
@@ -42,7 +42,7 @@ request.send();
 request.addEventListener('load', callbackF);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-							CALLBACKS AND CALLBACK-HELL
+			> CALLBACKS AND CALLBACK-HELL
 											
 	> To make an AJAX call depend on other (so the order in which each ends is set).
 	> Before, all run in parallel and we have no way of knowing beforehand wich one will end first.
@@ -52,8 +52,8 @@ request.addEventListener('load', callbackF);
 			
 			
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 						PROMISES (A WAY TO AVOID CALLBACK HELL) - ES6
- 						AND FETCH API (NEW WAY OF AJAX CALLING)
+ 			> PROMISES (A WAY TO AVOID CALLBACK HELL) - ES6
+ 			  AND FETCH API (NEW WAY OF AJAX CALLING)
  	> FETCH API :
  		 · For basic ajax calls
  		 
@@ -81,7 +81,7 @@ request.addEventListener('load', callbackF);
  							Or buil a promise, in order to consume it.
  							
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-							CONSUMING PROMISES 
+			> CONSUMING PROMISES 
 > Consuming the promise returned from the FETCH function.
 	 
 · WE USE TE "THEN" METHOD (AVAILABLE FOR ALL PROMISES).
@@ -97,7 +97,7 @@ request.addEventListener('load', callbackF);
 	SO WE CHAIN ANOTHER THEN METHOD.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						HANDLING ERROR WITH PROMISES
+			> HANDLING ERROR WITH PROMISES
 	THE THEN METHOD ACCEPTS TWO PARAMETERS:
   · THE FIRST CALLBACK FUNCTION THAT WE'VE BEEN USING TO MANAGE THE REQUEST, WITH THE RESPONSE PARAMETER.
   · FETCH METHOD ONLY REJECTS WHEN THERE'S NO INTERNET CONECTION.
@@ -117,3 +117,40 @@ request.addEventListener('load', callbackF);
   
   
   · WE NEED A WAY TO MANAGE ANOTHER TYPE OF ERRORS OTHER THAT NO INTERNET CONECTION.
+  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			> THROWING ERRORS MANUALLY
+
+  To throw user-understandable errors, that make the user understand the error better (Eg. 404 error - request not found).
+!-> Fetch ONLY REJECTS WHEN THERES NO INTERNET.
+
+	> WE CAN ADD THIS LOGIC IN THE RESPONSE BASED ON THE OK PROPERTY.
+	 response.ok =  true, => status: 200,
+	 
+	> WE CAN ADD A LOGICAL OPERATOR, THAT WILL THROW AN ERROR IF THE RESPONSE.OK IS SET TO FALSE.
+	
+>> SYNTAX <<
+
+if (!response.ok)
+	throw new Error(error message);
+	
+>>>>>>THROWING AN ERROR INMEDIATELY TERMINATES THE FUNCTION (SAME AS RETURN) AND REJECTS THE PROMISE.
+	AFTER THROWING AN ERROR THE STATUS OF THE PROMISE WILL BE REJECTED. The rejection will propagate till the catch method.
+					
+					
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////					
+			> BUILDING A SIMPLE PROMISE
+			
+· new Promise(function(){})		-> Promise constructor - In JS Promises are a special kind of objects.
+					-> They receibe exactly one parameter: A FUNCTION CALLED EXECUTOR.
+					-> As soon as the promise resolves, it will run the executor function.
+					-> The executor function receibes two parameteres. The "resolve" and "reject" functions.
+					
+  -> We add logic to the Promise, and as al promises, when resolved, must return a value.
+  -> To set the promise as fullfilled, we use the first parameter function "resolve()".
+  -> Whaterver we pass as a parameter of the "resolve" function will be the value returned by the fullfilled promise.
+  -> To set the promise as rejected, we use the "reject" parameter function.
+  
+  -> Promise.resolve('value') -> Inmediately fullfilled promise.
+  
+  
